@@ -1,3 +1,4 @@
+package com.jm.util;
 
 public interface DBIntializer {
 String DRIVER="oracle.jdbc.driver.OracleDriver";

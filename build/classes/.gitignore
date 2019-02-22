@@ -1,6 +1,9 @@
+/ComposeServlet.class
+/DBIntializer.class
 /DeleteServlet.class
 /GetCon.class
 /InboxServlet.class
+/JavaEmail.class
 /LoginServlet.class
 /LogoutServlet.class
 /MyListener.class
@@ -11,5 +14,3 @@
 /StudentServlet.class
 /VerifyLogin.class
 /com/
-/ComposeServlet.class
-/DBIntializer.class
