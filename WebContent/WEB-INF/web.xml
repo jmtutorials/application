@@ -95,10 +95,6 @@
     <servlet-name>StudentServlet</servlet-name>
     <url-pattern>/StudentServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>I</servlet-name>
-    <url-pattern>/servlet/I</url-pattern>
-  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>

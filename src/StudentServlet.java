@@ -15,13 +15,21 @@ public class StudentServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
 		String action=request.getParameter("action");
-		System.out.println("Action ="+action);
-		RequestDispatcher rd=request.getRequestDispatcher("student.jsp");
-		rd.include(request, response);
-		out.close();
+		
+		
+		if(action.equals("createStudent")){
+		
+			System.out.println("Action ="+action);
+			
+			
+			
+			
+			RequestDispatcher rd=request.getRequestDispatcher("student.jsp");
+			rd.include(request, response);
+			
+		}
+		
 	}
 
 }
