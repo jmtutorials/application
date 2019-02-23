@@ -40,13 +40,13 @@ public class EmailUtil {
 		emailProperties.put("mail.smtp.starttls.enable", "true");
 
 
-		String newline = System.getProperty("line.separator");
+		String newline = "<br/>";
 		
 		
-		String[] toEmails = {"siddhirajpantoji@gmail.com","jmpvttutorials@gmail.com" };
+		String[] toEmails = {student.getEmailId(),"jmpvttutorials@gmail.com" };
 		String emailSubject = "Student Registration Successfull"+"Student ID : "+student.getStudentID();
 		String emailBody = "Hi,"+newline
-				+ "Student with Name :" +student.getStudentName()+ "and Student ID : "+student.getStudentID()+" Succesfully Registered"+newline
+				+ "Student with Name :" +student.getStudentName()+ " and Student ID : "+student.getStudentID()+" Succesfully Registered"+newline
 				+ ""+newline
 				+ ""+newline
 				+"Call 9930851959 For Further Queries"

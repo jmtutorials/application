@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com -->
-  <title>Bootstrap Theme Company Page</title>
+  
+  <title>J M Tuorials </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -200,7 +200,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -215,8 +215,6 @@
 
 <div class="jumbotron text-center" style="background-image: url('images/JM_Header.png')">
   <h1>J M Tutorials </h1> 
-  
-  
 </div>
 
 <!-- Container (About Section) -->
@@ -225,8 +223,8 @@
     <div class="col-sm-8">
       <h2>About Us</h2><br>
      
-      <p>We are committed to take education to every single door, making it a superb blend of knowledge and job specific. Our mission is to create ethical and intellectual personnel through qualitative education. Today, Divesh Classes is located at Malad West, Mumbai, Maharashtra. And, we are looking forward to spread our efficiency at every nook and corner of India. We are the player with diverse courses, teaching methodology, efficient faculty team and effective management staff. Choose to contact or reach us for an assured advanced career.</p>
-      <br><button class="btn btn-default btn-lg" >Get in Touch</button>
+      <p>We are committed to take education to every single door, making it a superb blend of knowledge and job specific. Our mission is to create ethical and intellectual personnel through qualitative education. Today, JM Classes is located at Malad West, Mumbai, Maharashtra. And, we are looking forward to spread our efficiency at every nook and corner of India. We are the player with diverse courses, teaching methodology, efficient faculty team and effective management staff. Choose to contact or reach us for an assured advanced career.</p>
+      <br><button class="btn btn-default btn-lg">Get in Touch</button>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-signal logo"></span>
@@ -236,7 +234,7 @@
 
 <!-- Container (Portfolio Section) -->
 <div id="portfolio" class="container-fluid text-center bg-grey"> 
-  <h2>What our customers say</h2>
+  <h2>What our students say</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -248,13 +246,36 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+      	<div class="row">
+      		<div class="col-sm-6">
+      			<img alt="Vijay" src="images/Vijay.jpeg">
+      		</div>
+      		<div class="col-sm-6">
+      			<h4>"Best Coaching for Maths and Science "<br><span>Vijay, Sir JP </span></h4>
+      		</div>
+      	</div>
+      	
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+     	<div class="row">
+      		<div class="col-sm-6">
+      			<img alt="Pallavi" src="images/Pallavi.jpeg">
+      		</div>
+      		<div class="col-sm-6">
+      			<h4>"One word... WOW!!"<br><span>Pallavi , Sir JP </span></h4>
+      		</div>
+      	</div>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+      <div class="row">
+      		<div class="col-sm-6">
+      			<img alt="Anaita" src="images/Annu.jpeg">
+      		</div>
+      		<div class="col-sm-6">
+      			<h4>"Best faculties and conceptual learning "<br><span>Anahita, Carmels of St. Joseph </span></h4>
+      		</div>
+      	</div>
+        
       </div>
     </div>
 
@@ -332,7 +353,7 @@
       <p>Contact us and we'll get back to you</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Malad West </p>
       <p><a href="tel:+919930851959"><span class="glyphicon glyphicon-phone"></span> +91 9930851959</a></p>
-      <p><a href="mailto:godinhojolen@gmail.com"><span class="glyphicon glyphicon-envelope"></span>godinhojolen@gmail.com</a></p>
+      <p><a href="mailto:godinhojolen@gmail.com"><span class="glyphicon glyphicon-envelope"></span> godinhojolen@gmail.com</a></p>
     </div>
     <div class="col-sm-7 slideanim">
     <form action="StudentServlet" method="post">
@@ -350,7 +371,7 @@
 	          <input class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="Birth Date" type="date" required>
 	        </div>
 	        <div class="col-sm-6 form-group">
-	          <input class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile Number" type="tel" required="true">
+	          <input class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile Number" type="number" required="true">
 	        </div>
       	</div>
       	<div class="row">
@@ -385,21 +406,6 @@
   </div>
 </div>
 
-<!-- Image of location/map -->
-<div id="googleMap" style="width:100%;height:400px;"></div>
-
-<script>
-function myMap() {
-var mapProp= {
-		// 19.1804778, 72.8326805
-  center:new google.maps.LatLng(19.195982, 72.820354	),
-  zoom:20,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVq8sykQ20yaIIwm9zQJMFisDDeT2NSvA&callback=myMap"></script>
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
