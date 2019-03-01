@@ -29,7 +29,8 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session=request.getSession();
 			session.setAttribute("username",uname);
 //			out.print("Welcome    " + uname);
-			RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
+			
+			RequestDispatcher rd=request.getRequestDispatcher("student.jsp");
 			rd.include(request, response);
 		}
 		else{
