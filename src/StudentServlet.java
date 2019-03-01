@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jm.dao.StudentDao;
 import com.jm.model.Student;
-import com.jm.util.Mailer;
 import com.jm.util.EmailUtil;
 import com.jm.util.JMConstants;
 
@@ -27,14 +28,14 @@ public class StudentServlet extends HttpServlet {
 			Student student= new Student();
 
 			student.setStudentName(request.getParameter("studentName"));
-			student.setStd(request.getParameter("dateOfBirth"));
-			student.setSchoolName(request.getParameter("mobileNo"));
-			student.setReferredBy(request.getParameter("std"));
-			student.setParentName(request.getParameter("emailId"));
-			student.setMobileNo(request.getParameter("address"));
-			student.setEmailId(request.getParameter("schoolName"));
-			student.setDateOfBirth(request.getParameter("parentName"));
-			student.setAddress(request.getParameter("referredBy"));
+			student.setStd(request.getParameter("std"));
+			student.setSchoolName(request.getParameter("schoolName"));
+			student.setReferredBy(request.getParameter("referredBy"));
+			student.setParentName(request.getParameter("parentName"));
+			student.setMobileNo(request.getParameter("mobileNo"));
+			student.setEmailId(request.getParameter("emailId"));
+			student.setDateOfBirth(request.getParameter("dateOfBirth"));
+			student.setAddress(request.getParameter("address"));
 
 			try {
 				Student updatedStudent=StudentDao.registerStudent(student);
@@ -52,10 +53,11 @@ public class StudentServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			
-
-		}
+			response.setContentType("text/html");
+			PrintWriter out=response.getWriter();
+			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+			rd.include(request, response);
+			}
 
 	}
 
