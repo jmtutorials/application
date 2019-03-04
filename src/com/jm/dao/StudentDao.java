@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.jm.model.Fees;
 import com.jm.model.Student;
 import com.jm.util.EmailUtil;
 import com.jm.util.GetCon;
@@ -17,7 +18,7 @@ public class StudentDao {
 		Connection con=GetCon.getCon();
 		PreparedStatement ps;
 		try {
-			ps = con.prepareStatement("Insert into STUDENT values(jmstudent_id_seq.nextval,?,?,?,?,?,?,?,?,?)");
+			ps = con.prepareStatement("Insert into STUDENT values(jmstudent_id_seq.nextval,?,?,?,?,?,?,?,?,?,?,?)");
 
 			ps.setString(1,student.getStudentName());
 			ps.setString(2,student.getStd());
@@ -28,6 +29,8 @@ public class StudentDao {
 			ps.setString(7,student.getSchoolName());
 			ps.setString(8,student.getParentName());
 			ps.setString(9,student.getReferredBy());
+			ps.setString(10,student.getUserId());
+			ps.setString(11,student.getPassword());
 			int status=ps.executeUpdate();
 
 			if(status==1) {
@@ -38,8 +41,9 @@ public class StudentDao {
 					studentId = rs.getInt(1);
 					student.setStudentID(studentId);
 				}
+			
 			}
-
+ 
 			else {
 				student=null;
 			}

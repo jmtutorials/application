@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<%@page import="com.jm.util.JMConstants"%>
+<%@page import="com.jm.model.*"%>
 <html lang="en">
 <head>
   
-  <title>J M Tuorials </title>
+  <title>J M Tutorials </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -219,7 +221,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">SERVICES</a></li>
+        <li><a href="#services">SERVICES</a></li>
         <li><a href="#contact">CONTACT</a></li>
         <li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> login</a></li>
       </ul>
@@ -305,8 +307,8 @@
   </div>
 </div>
 
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid">
   <div class="text-center">
     <h2>Services</h2>
   </div>
@@ -322,7 +324,7 @@
           <p>Languages</p>
         </div>
         <div class="panel-footer">
-          <button class="btn btn-lg">Enquire</button>
+          <a href="#contact" class="btn btn-info" role="button">Enquire</a>
         </div>
       </div>      
     </div>     
@@ -337,7 +339,7 @@
           <p> Programmning </p>
         </div>
         <div class="panel-footer">
-          <button class="btn btn-lg">Enquire</button>
+        <a href="#contact" class="btn btn-info" role="button">Enquire</a>
         </div>
       </div>      
     </div>       
@@ -352,7 +354,7 @@
           <p>Nationalised Bank PO</p>
         </div>
         <div class="panel-footer">
-          <button class="btn btn-lg">Enquire</button>
+          <a href="#contact" class="btn btn-info" role="button">Enquire</a>
         </div>
       </div>      
     </div>    
@@ -361,17 +363,18 @@
 
 <!-- Container (Contact Section) -->
 <div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
+  <h2 class="text-center">SEND US AN ENQUIRY HERE</h2>
   <div class="row">
     <div class="col-sm-5">
       <p>Contact us and we'll get back to you</p>
       <p><span class="glyphicon glyphicon-map-marker"></span> Malad West </p>
       <p><a href="tel:+919930851959"><span class="glyphicon glyphicon-phone"></span> +91 9930851959</a></p>
-      <p><a href="mailto:godinhojolen@gmail.com"><span class="glyphicon glyphicon-envelope"></span> godinhojolen@gmail.com</a></p>
+      <p><a href="mailto:jmpvttutorials@gmail.com"><span class="glyphicon glyphicon-envelope"></span> jmpvttutorials@gmail.com</a></p>
     </div>
-    <div class="col-sm-7 slideanim">
-    <form action="StudentServlet" method="post">
-    	<input type="hidden" name="action" value="createStudent"/>
+  
+     <div class="col-sm-7 slideanim">
+    <form action="EnquiryServlet" method="post">
+    	<input type="hidden" name="action" value="<%=JMConstants.STUDENT_ENQUIRY%>"/>
     	<div class="row">
 	        <div class="col-sm-6 form-group">
 	          <input class="form-control" id="studentName" name="studentName" placeholder="Name" type="text" required>
@@ -381,42 +384,31 @@
 	        </div>
       	</div>
       <div class="row">
-	        <div class="col-sm-6 form-group">
-	          <input class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="Birth Date" type="date" required>
-	        </div>
+	        
 	        <div class="col-sm-6 form-group">
 	          <input class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile Number" type="number" required="true">
 	        </div>
-      	</div>
-      	<div class="row">
+	        
 	        <div class="col-sm-6 form-group">
 	          <input class="form-control" id="std" name="std" placeholder="Standard" type="number" required="true" min="7" max="10">
 	        </div>
-	        <div class="col-sm-6 form-group">
-	          <input class="form-control" id="address" name="address" placeholder="Address" type="text" required="true">
-	        </div>
+      	</div>
+      	<div class="row">
+	        
+	        
       	</div>
       	<div class="row">
 	        <div class="col-sm-6 form-group">
 	          <input class="form-control" id="schoolName" name="schoolName" placeholder="School Name" type="text" required="true">
 	        </div>
-	        <div class="col-sm-6 form-group">
-	          <input class="form-control" id="parentName" name="parentName" placeholder="Parent Name" type="tel" required="true">
-	        </div>
-      	</div>
-      	<div class="row">
-	        <div class="col-sm-6 form-group">
-	          <input class="form-control" id="password" name="password" placeholder="Password" type="password" required="true">
-	        </div>
-	        <div class="col-sm-6 form-group">
-	          <input class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Re-enter Password" type="password" required="true">
-	        </div>
-      	</div>
-      	<div class="row">
+	        
 	        <div class="col-sm-6 form-group">
 	          <input class="form-control" id="referredBy" name="referredBy" placeholder="Referred By " type="text">
 	        </div>
+	        
       	</div>
+      	
+      	
       <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Send</button>
@@ -436,17 +428,19 @@
             </div>
             <div class="modal-body">
                    <form action="LoginServlet" method="post">
-                   <div class="form-group">
-                       <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm" placeholder="Email" id="email" name="email">
+                  <h2 class="text-center">LOGIN</h2> 
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm" required="true" value="" type="text" placeholder="Email" id="email" name="email">
                        </div>
                         <div class="form-group">  
                           
                            <label class="sr-only" for="password">Password</label>
-                                     <input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password"></div>
+                                     <input type="password" class="form-control input-sm" required="true" value="" type="text" placeholder="Password" id="password" name="password"></div>
                        
-                   
+                   <p class="text-center">
                        <button type="submit" class="btn btn-info btn-xs">Sign in</button>
                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Cancel</button> 
+                       </p>
                     </form>
             </div>
 

@@ -1,4 +1,4 @@
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="headerstudent.jsp"></jsp:include>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script
@@ -8,6 +8,7 @@
 <script type="text/javascript">
 	
 </script>
+<h3 align="center">Create New Student</h3>
 <div class="container">
 
 

@@ -13,6 +13,10 @@ public class Student {
 	String schoolName;
 	String parentName;
 	String referredBy;
+	String userId;
+	String password;
+	
+	
 	
 	
 	
@@ -20,9 +24,8 @@ public class Student {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Student(int studentID, String studentName, String dateOfBirth, String mobileNo, String std,
-			String emailId, String address, String schoolName, String parentName, String referredBy) {
+	public Student(int studentID, String studentName, String dateOfBirth, String mobileNo, String std, String emailId,
+			String address, String schoolName, String parentName, String referredBy, String userId, String password) {
 		super();
 		this.studentID = studentID;
 		this.studentName = studentName;
@@ -34,8 +37,9 @@ public class Student {
 		this.schoolName = schoolName;
 		this.parentName = parentName;
 		this.referredBy = referredBy;
+		this.userId = userId;
+		this.password = password;
 	}
-	
 	public int getStudentID() {
 		return studentID;
 	}
@@ -96,11 +100,18 @@ public class Student {
 	public void setReferredBy(String referredBy) {
 		this.referredBy = referredBy;
 	}
-
-	@Override
-	public String toString() {
-		return "StudentDao [studentID=" + studentID + ", studentName=" + studentName + ", dateOfBirth=" + dateOfBirth
-				+ ", mobileNo=" + mobileNo + ", std=" + std + ", emailId=" + emailId + ", address=" + address
-				+ ", schoolName=" + schoolName + ", parentName=" + parentName + ", referredBy=" + referredBy + "]";
-	}	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 }

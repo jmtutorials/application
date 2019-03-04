@@ -12,6 +12,11 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6189969869246489166L;
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -22,7 +27,11 @@ public class LoginServlet extends HttpServlet {
 		boolean status = false;
 		//boolean status=VerifyLogin.checkLogin(uname,password);
 		
-		if( uname != null || password != null  ) {
+		if( null==uname || null==password  ) {
+			response.sendRedirect("/mailcasting/");  
+		}
+		
+		else if( uname.equals("admin") || password.equals("admin")  ) {
 			status = true;
 		}
 		if(status){
@@ -30,18 +39,22 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("username",uname);
 //			out.print("Welcome    " + uname);
 			
-			RequestDispatcher rd=request.getRequestDispatcher("student.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("admin.jsp");
 			rd.include(request, response);
 		}
 		else{
-			String Error="Please check your EMail and Password";
-			request.setAttribute("Error", Error);
 			
-			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("invalidauthentication.jsp");
 			rd.include(request, response);
 			
 		}
 		out.close();
 	}
-
+	
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		doPost(request, response);
+	}
 }
+

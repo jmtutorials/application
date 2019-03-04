@@ -59,6 +59,18 @@
     <servlet-name>StudentServlet</servlet-name>
     <servlet-class>StudentServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EnquiryServlet</servlet-name>
+    <servlet-class>EnquiryServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TimeTableServlet</servlet-name>
+    <servlet-class>TimeTableServlet</servlet-class>
+  </servlet>
 
 
 
@@ -94,6 +106,14 @@
   <servlet-mapping>
     <servlet-name>StudentServlet</servlet-name>
     <url-pattern>/StudentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EnquiryServlet</servlet-name>
+    <url-pattern>/EnquiryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TimeTableServlet</servlet-name>
+    <url-pattern>/TimeTableServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
