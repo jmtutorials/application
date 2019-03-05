@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jm.dao.VerifyLogin;
+import com.jm.model.Student;
+
 
 public class LoginServlet extends HttpServlet {
 
@@ -25,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		String uname=request.getParameter("email");
 		String password=request.getParameter("password");
 		boolean status = false;
-		//boolean status=VerifyLogin.checkLogin(uname,password);
+		
 		
 		if( null==uname || null==password  ) {
 			response.sendRedirect("/mailcasting/");  
@@ -43,10 +46,21 @@ public class LoginServlet extends HttpServlet {
 			rd.include(request, response);
 		}
 		else{
+			try {
+				RequestDispatcher rd = null;
+				Student student = VerifyLogin.verifyLoginForStudent(uname, password);
+			 if( null == student ) {
+				 rd =request.getRequestDispatcher("invalidauthentication.jsp");	 
+			 }
+			 else {
+				rd=request.getRequestDispatcher("studentTimeTable.jsp");
+			 }
 			
-			RequestDispatcher rd=request.getRequestDispatcher("invalidauthentication.jsp");
 			rd.include(request, response);
-			
+			}
+			catch(Exception e ) {
+				e.printStackTrace();
+			}
 		}
 		out.close();
 	}

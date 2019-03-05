@@ -1,7 +1,8 @@
+<jsp:include page="header_admin.jsp"></jsp:include>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <style>
-* {
+ {
   box-sizing: border-box;
 }
 
@@ -35,14 +36,6 @@ footer {
   }
 }
 </style>
-
-</head>
-<body>
-
-<header>
-  <h2>J.M. Tutorials</h2>
-</header>
-<h4><a href="admin.jsp">Home Page</a></h4>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -78,7 +71,7 @@ footer {
 						<span class="input-group-addon"><i
 							class="glyphicon glyphicon-home"></i></span><input id="dateOfBirth"
 							name="dateOfBirth" placeholder="dateOfBirth"
-							class="form-control" required="true" value="" type="text">
+							class="form-control" required="true" value="" type="date">
 					</div>
 				</div>
 			</div>
@@ -89,7 +82,7 @@ footer {
 						<span class="input-group-addon"><i
 							class="glyphicon glyphicon-home"></i></span><input id="mobileNo"
 							name="mobileNo" placeholder="mobileNo" class="form-control"
-							required="true" value="" type="text">
+							required="true" value="" type="tel">
 					</div>
 				</div>
 			</div>
@@ -111,7 +104,7 @@ footer {
 						<span class="input-group-addon"><i
 							class="glyphicon glyphicon-home"></i></span><input id="emailId" name="emailId"
 							placeholder="emailId" class="form-control" required="true" value=""
-							type="text">
+							type="email">
 					</div>
 				</div>
 			</div>
@@ -167,7 +160,7 @@ footer {
 						<span class="input-group-addon"><i
 							class="glyphicon glyphicon-earphone"></i></span><input id="fees"
 							name="fees" placeholder="fees" class="form-control"
-							 value="" type="text">
+							 value="" type="number">
 					</div>
 				</div>
 			</div>
@@ -191,7 +184,7 @@ footer {
 						<span class="input-group-addon"><i
 							class="glyphicon glyphicon-earphone"></i></span><input type="password" id="password"
 							name="password" placeholder="password" class="form-control"
-							required="true" value="" type="text">
+							required="true" value="" type="password">
 					</div>
 				</div>
 			</div>

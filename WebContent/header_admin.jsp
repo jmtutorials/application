@@ -1,67 +1,109 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<%@page import="com.jm.util.JMConstants"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>J.M Classes System</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.dropdown-submenu {
-  position: relative;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.dropdown-submenu a::after {
-  transform: rotate(-90deg);
+/* Style the footer */
+footer {
+  background-color: #007b9d;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #007b9d;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
-  right: 6px;
-  top: .8em;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-.dropdown-submenu .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-left: .1rem;
-  margin-right: .1rem;
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 </style>
-<script type="text/javascript">
-$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-	  if (!$(this).next().hasClass('show')) {
-	    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-	  }
-	  var $subMenu = $(this).next(".dropdown-menu");
-	  $subMenu.toggleClass('show');
-
-
-	  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-	    $('.dropdown-submenu .show').removeClass("show");
-	  });
-
-
-	  return false;
-	});</script>
 </head>
-
 <body>
-	<!-- Common Navbar is over here for adding options . Currently taking only blank with # and 3 options  -->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-  <a class="navbar-brand" href="#">JM  </a>
-  	<ul class="navbar-nav">
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Student
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="redirect?action=student">Create</a></li>
-          <li><a class="dropdown-item" href="#">All Students</a></li>
-          
-        </ul>
-      </li>
-   
-  </ul>
-</nav>
+
+<div class="navbar">
+	<a href="admin.jsp">Home</a>
+  <a href="/mailcasting/EnquiryServlet?action=<%=JMConstants.VIEW_ALL_ENQUIRIES%>">Enquiries</a>
+  <div class="dropdown">
+    <button class="dropbtn">Student 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="createstudent.jsp">Create Student</a>
+      <a href="editstudent.jsp">Edit Student</a>
+      <a href="deletestudent.jsp">Delete Student</a>
+      <a href="viewstudent.jsp">View Student</a>
+    </div>
+    
+  </div>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Timetable 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="createtimetable.jsp">Create TimeTable</a>
+    </div>
+    
+  </div>
+  <a href="#fees">Fees</a>
+</div>
